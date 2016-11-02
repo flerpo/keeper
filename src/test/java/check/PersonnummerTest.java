@@ -1,35 +1,70 @@
 package check;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import javax.ws.rs.core.Response;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by eara02 on 2016-10-31.
  */
 public class PersonnummerTest {
-    @Before
-    public void setUp() throws Exception {
-
-    }
-
-    @After
-    public void tearDown() throws Exception {
-
-    }
-
 
     @Test
-    public void returneraPersonnummer() throws Exception {
-
-    }
-
-    @Test
-    public void returneraalder() throws Exception {
+    public void returneraKorrektPersonnummer10() throws Exception {
         check.Personnummer p = new check.Personnummer();
-        p.returneraalderXml("4501010212");
+        Response r = p.returneraPersonnummer("8008090212");
+        assertEquals(200,r.getStatus());
+    }
+
+    @Test
+    public void returneraFelaktigtPersonnummer10() throws Exception {
+        check.Personnummer p = new check.Personnummer();
+        Response r = p.returneraPersonnummer("8008090211");
+        assertEquals(500,r.getStatus());
+    }
+
+    @Test
+    public void returneraalderKorrektPersonNummer10() throws Exception {
+        check.Personnummer p = new check.Personnummer();
+        Response r = p.returneraalderXml("4501010212");
+        assertEquals(200,r.getStatus());
+    }
+
+    @Test
+    public void returneraalderFelaktigtPersonNummer10() throws Exception {
+        check.Personnummer p = new check.Personnummer();
+        Response r = p.returneraalderXml("45010102121");
+        assertEquals(500,r.getStatus());
+    }
+
+    @Test
+    public void returneraKorrektPersonnummer12() throws Exception {
+        check.Personnummer p = new check.Personnummer();
+        Response r = p.returneraPersonnummer("198008090212");
+        assertEquals(200,r.getStatus());
+    }
+
+    @Test
+    public void returneraFelaktigtPersonnummer12() throws Exception {
+        check.Personnummer p = new check.Personnummer();
+        Response r = p.returneraPersonnummer("198008090211");
+        assertEquals(500,r.getStatus());
+    }
+
+    @Test
+    public void returneraalderKorrektPersonNummer12() throws Exception {
+        check.Personnummer p = new check.Personnummer();
+        Response r = p.returneraalderXml("194501010212");
+        assertEquals(200,r.getStatus());
+    }
+
+    @Test
+    public void returneraalderFelaktigtPersonNummer12() throws Exception {
+        check.Personnummer p = new check.Personnummer();
+        Response r = p.returneraalderXml("1945010102121");
+        assertEquals(500,r.getStatus());
     }
 
 }

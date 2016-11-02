@@ -28,20 +28,21 @@ public class Personnummer {
 
         JSONObject jsonObject = new JSONObject();
         Response resp;
-        jsonObject.put("Fick in Value", personNummer);
-        String result = "Output: \n\n" + jsonObject;
+
+
         if (checkLenght(personNummer) == false) {
-           resp  = Response.status(500).entity(result).build();
+            jsonObject.put ("result" , "FEL");
+           resp  = Response.status(200).entity(jsonObject.toString()).build();
             return resp;
         }
         if (checkNumber(personNummer) == false) {
-            result = result + "\n FEL!";
-            resp  = Response.status(500).entity(result).build();
+            jsonObject.put ("result" , "FEL");
+            resp  = Response.status(200).entity(jsonObject.toString()).build();
             return resp;
         }
 
-        result = result + "\n OK!";
-        resp = Response.status(200).entity(result).build();
+        jsonObject.put ("result" , "OK");
+        resp = Response.status(200).entity(jsonObject.toString()).build();
         return resp;
     }
 
@@ -54,10 +55,10 @@ public class Personnummer {
         Response resp;
         Date d = new Date();
         if (checkLenght(personNummer) == false) {
-            jsonObject.put("Meep in Value", personNummer);
-            String result = "@Produces(\"application/json\") Output: \n\nF to C Converter Output: \n\n" + jsonObject;
 
-            resp  = Response.status(500).entity(result).build();
+            jsonObject.put ("result" , "FEL");
+
+            resp  = Response.status(200).entity(jsonObject.toString()).build();
             return resp;
         }
 
@@ -71,10 +72,9 @@ public class Personnummer {
 
         Integer alder = getAge(d);
 
-        jsonObject.put("Ålder", alder);
-        String result2 = "@Produces(\"application/json\") Output: \n\n" + jsonObject;
+        jsonObject.put("Age", alder);
 
-        resp = Response.status(200).entity(result2).build();
+        resp = Response.status(200).entity(jsonObject.toString()).build();
         return resp;
     }
 
@@ -118,7 +118,7 @@ public class Personnummer {
 
                 String result = "Error";
 
-                resp  = Response.status(500).entity(result).build();
+                resp  = Response.status(200).entity(result).build();
                 return resp;
             }
 
@@ -132,7 +132,7 @@ public class Personnummer {
 
             Integer alder = getAge(d);
 
-            String xmlString = "<data><alder>" + alder + "</alder></data>";
+            String xmlString = "<data> \n <alder> \n" + alder + "\n</alder>\n</data>";
             String result2 = xmlString;
 
             resp = Response.status(200).entity(result2).build();

@@ -29,7 +29,7 @@ public class PersonnummerTest {
     @Test
     public void returneraalder() throws Exception {
         check.Personnummer p = new check.Personnummer();
-        p.returneraalder("194501010212");
+        p.returneraalderXml("4501010212");
     }
 
 }

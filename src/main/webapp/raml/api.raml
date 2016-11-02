@@ -1,0 +1,24 @@
+#%RAML 0.8
+title: RestDemo
+baseUri: http://example.com
+/kontrollera/koll/{personNummer}: 
+  description: Created by eara02 on 2016-10-31.
+  get: 
+    responses: 
+      200: 
+        body: 
+          application/json: 
+/kontrollera/alder/{personNummer}/json: 
+  description: Created by eara02 on 2016-10-31.
+  get: 
+    responses: 
+      200: 
+        body: 
+          application/json: 
+/kontrollera/alder/{personNummer}/xml: 
+  description: Created by eara02 on 2016-10-31.
+  get: 
+    responses: 
+      200: 
+        body: 
+          application/xml: 

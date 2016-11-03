@@ -1,5 +1,5 @@
 ##Keeper
-#####MinitRestTjänst för att kontrollera svenska personnummer
+#####MiniRestTjänst för att kontrollera svenska personnummer
 -- skriven i demonstrationssyfte --
 - Validerar checksiffra
 - Räknar ut hur gammal man är

@@ -1,1 +1,1 @@
-web: sh target/bin/webapp
+web: sh target/bin/evening-brushlands-48632

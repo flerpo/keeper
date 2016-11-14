@@ -77,28 +77,28 @@
           <path>/RestDemo</path>
         </configuration>
       </plugin>
-      <plugin>
-        <version>1.3.4</version>
-        <groupId>org.raml.plugins</groupId>
-        <artifactId>jaxrs-raml-maven-plugin</artifactId>
-        <configuration>
-          <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
-          <outputFile>${basedir}/src/main/webapp/raml/api.raml</outputFile>
-          <!--<basePackageName>com.mulesoft.jaxrs.raml.annotation.tests</basePackageName>-->
-          <!--<jaxrsVersion>2.0</jaxrsVersion>-->
-          <!--<useJsr303Annotations>false</useJsr303Annotations>-->
-          <!--<jsonMapper>jackson2</jsonMapper>-->
-          <removeOldOutput>true</removeOldOutput>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>generate-raml</goal>
-            </goals>
-            <phase>test</phase>
-          </execution>
-        </executions>
-      </plugin>
+      <!--<plugin>-->
+        <!--<version>1.3.4</version>-->
+        <!--<groupId>org.raml.plugins</groupId>-->
+        <!--<artifactId>jaxrs-raml-maven-plugin</artifactId>-->
+        <!--<configuration>-->
+          <!--<sourceDirectory>${basedir}/src/main/java</sourceDirectory>-->
+          <!--<outputFile>${basedir}/src/main/webapp/raml/api.raml</outputFile>-->
+          <!--&lt;!&ndash;<basePackageName>com.mulesoft.jaxrs.raml.annotation.tests</basePackageName>&ndash;&gt;-->
+          <!--&lt;!&ndash;<jaxrsVersion>2.0</jaxrsVersion>&ndash;&gt;-->
+          <!--&lt;!&ndash;<useJsr303Annotations>false</useJsr303Annotations>&ndash;&gt;-->
+          <!--&lt;!&ndash;<jsonMapper>jackson2</jsonMapper>&ndash;&gt;-->
+          <!--<removeOldOutput>true</removeOldOutput>-->
+        <!--</configuration>-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<goals>-->
+              <!--<goal>generate-raml</goal>-->
+            <!--</goals>-->
+            <!--<phase>test</phase>-->
+          <!--</execution>-->
+        <!--</executions>-->
+      <!--</plugin>-->
     </plugins>
     <finalName>RestDemo</finalName>
   </build>

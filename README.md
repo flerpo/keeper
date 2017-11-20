@@ -4,5 +4,3 @@
 - Validerar checksiffra
 - Räknar ut hur gammal man är
 - Automatisk generering av RAML
-
-
